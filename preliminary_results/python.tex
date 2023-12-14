@@ -1,0 +1,58 @@
+\subsection{Development of a Python Prototype for Digital Twin Simulation}
+
+In the preliminary phase of developing the digital twin for the Siberian Ring
+Source of Photons (SKIF), a simple prototype has been created. This
+program is designed to integrate and utilize the pre-generated data from COMSOL
+Multiphysics simulations, specifically focusing on the heat and stress fields
+of the diamond window and its cooling system. The core functionalities of this
+program include:
+
+\begin{itemize}
+
+  \item Data Integration: The program reads pre-generated COMSOL data and a 3D
+    STL model of the diamond window. This data includes temperature and stress
+    data for each model point for different input parameters.
+
+  \item User Interface for Parameter Input: The program features a graphical
+    user interface where users can input desired parameters, such as beam
+    position (x, y coordinates) and cooling water flow rate. Additionally,
+    users can select which output parameter (temperature or stress) they wish
+    to visualize.
+
+  \item Machine Learning Model Training: For each point on the 3D model and for
+    each output value (temperature, stress), the program trains a NuSVR
+    (Nu-Support Vector Regression) model from the scikit-learn library. This
+    machine learning approach allows for predictions of temperature and stress
+    based on input parameters.
+
+  \item Visualization and Prediction: Based on the inserted input parameters,
+    the program predicts and displays the selected output parameter on the 3D
+    model. This visualization is achieved through color mapping, providing an
+    intuitive understanding of how temperature or stress varies across the
+    diamond window.
+
+  \item Model Saving and Loading: Recognizing that training machine learning
+    models can be time-consuming, the program is equipped with the capability
+    to save and load trained SVR models. 
+
+\end{itemize}
+
+The development of this program is grounded in Python, a versatile and
+widely-used programming language known for its readability and extensive
+support for scientific computing. Python's vast ecosystem of libraries and
+tools makes it an ideal choice for developing complex simulation and data
+analysis applications \cite{python2021python}.
+
+Scikit-learn, a key library used in this program, is an open-source machine
+learning library for Python. It provides simple and efficient tools for data
+mining and data analysis, and it is built on NumPy, SciPy, and matplotlib.
+Scikit-learn is known for its robustness and ease of use, making it a popular
+choice for implementing machine learning algorithms, including support vector
+machines like NuSVR which was used in the described digital twin prototype
+\cite{kramer2016scikit}.
+
+In summary, the preliminary results demonstrate the successful integration of
+COMSOL-generated data with advanced machine learning techniques in Python,
+facilitated by scikit-learn. This integration forms the foundation of the
+digital twin's predictive capabilities, enabling accurate simulations of the
+diamond window's behavior under various operational scenarios.

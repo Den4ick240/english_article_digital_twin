@@ -1,0 +1,33 @@
+\subsection{Support Vector Regression (SVR) in Simulating Diamond Window Heat
+and Stress Fields}
+
+Support Vector Regression (SVR) is a powerful machine learning method used for
+regression problems. It is particularly effective in scenarios involving small
+samples, nonlinearity, and high-dimensional data \cite{Guo2009Application}. SVR
+has been applied in various fields, including time-series analysis,
+bioprocesses, and large-scale applications \cite{Rivas-Perea2013Support}.
+
+In the context of simulating the heat and stress fields of the diamond window
+in the Siberian Ring Source of Photons (SKIF), SVR plays a crucial role. Due to
+the computational intensity of direct simulations in COMSOL Multiphysics,
+real-time analysis is not feasible. To overcome this limitation, SVR is
+employed to train on pre-generated COMSOL data. This approach involves running
+simulations in COMSOL for a range of parameters, such as different ray
+positions and cooling water flow rates, to create a dataset that captures the
+behavior of the diamond window under various conditions.
+
+Once this dataset is established, SVR is used to learn the relationship between
+the input parameters and the resulting heat and stress fields. The advantage of
+using SVR in this scenario is its ability to make predictions much faster than
+a direct COMSOL simulation. The goal is to achieve real-time prediction
+capabilities, allowing for immediate assessment and adjustment of the diamond
+window's conditions during SKIF operations.
+
+The application of SVR in predicting physical processes has been demonstrated
+in various studies. For instance, Lahiri and Ghanta (2008) successfully used
+SVR to predict the pressure drop of slurry flow in pipelines, showcasing its
+effectiveness in fluid dynamics \cite{Lahiri2008Prediction}. Similarly, Wu,
+Wei, and Terpenny (2018) applied SVR to predict surface roughness in fused
+deposition modeling processes, highlighting its utility in manufacturing
+\cite{Wu2018Predictive}. These examples underscore the potential of SVR in
+accurately predicting complex physical phenomena based on historical data.
