@@ -1,0 +1,35 @@
+\subsection{Development of an Optimized Prototype Using CUDA and C++}
+
+The quest for optimization led to the adoption of CUDA (Compute Unified Device
+Architecture), a parallel computing platform and application programming
+interface (API) model created by NVIDIA. CUDA allows developers to use a
+CUDA-enabled graphics processing unit (GPU) for general purpose processing – an
+approach known as GPGPU (General-Purpose computing on Graphics Processing
+Units). By leveraging the massive parallel processing power of GPUs, CUDA makes
+it possible to perform complex computations much faster than traditional
+CPU-based approaches. This technology is particularly well-suited for
+applications that require handling large datasets and performing high-volume
+computations, which is the case with our digital twin simulation.
+
+Building upon the insights gained from the Python prototype, a new program was
+developed in C++, known for its high-performance capabilities. The key
+improvement in this version is the integration of CUDA, enabling the program to
+handle the intensive computational tasks more efficiently.
+
+Similar to the Python prototype, the C++ program reads pregenerated data from
+COMSOL simulations and the 3D STL model of the diamond window.
+
+The source code from libsvm, a library for Support Vector Machines (SVM), was
+adapted to run within CUDA kernels. This adaptation allows the program to
+execute the NuSVR model for each point of the 3D model directly on the GPU. By
+running the NuSVR model in parallel across the multiple cores of the GPU, the
+program aims to dramatically increase the speed of the simulation. This
+approach is expected to bring the processing time down to levels suitable for
+real-time applications.
+
+The development of the C++ and CUDA-based prototype is still underway, with
+significant progress made in terms of computational efficiency. However, a
+current challenge being faced is the efficient allocation of memory on the GPU
+for the models. Current programm can't work with sufficient number of points
+due to memory limitations, and optimizing this aspect is the next critical step
+in the development process.
